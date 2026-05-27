@@ -64,7 +64,7 @@ const AppSidebar = () => {
         </SidebarMenu>
       </SidebarHeader>
 
-      <SidebarSeparator />
+      <SidebarSeparator  className="w-xs"/>
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Application </SidebarGroupLabel>
