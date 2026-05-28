@@ -6,14 +6,14 @@ import TodoList from "@/components/TodoList";
 
 export default function Home() {
   return (
-    <div className="max-h-150 grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-6 ">
-      <div className="bg-primary-foreground p-4 lg:col-span-2 xl:col-span-1 2xl:col-span-2 rounded-lg max-h-150 ">
+    <div className="max-h-150 grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-4 ">
+      <div className="bg-primary-foreground p-4 lg:col-span-2 xl:col-span-1 2xl:col-span-2 rounded-lg max-h-165 ">
         <AppBarChart />
       </div>
-      <div className="bg-primary-foreground p-4 max-h-150">
-       <CardList title="popularcontent" />
+      <div className="bg-primary-foreground p-4 max-h-165">
+        <CardList title="popularcontent" />
       </div>
-      <div className="bg-primary-foreground p-4 max-h-150">
+      <div className="bg-primary-foreground p-4 max-h-165">
         <AppPieChart />
       </div>
       <div className="bg-primary-foreground p-4 "><TodoList /></div>
