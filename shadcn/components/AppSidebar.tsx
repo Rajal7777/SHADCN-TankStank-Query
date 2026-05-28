@@ -56,7 +56,7 @@ const AppSidebar = () => {
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
               <Link href='/'>
-                <Image src='/next.svg' alt='logo' width={20} height={20} />
+                <Image src='/next.svg' alt='logo' width={40} height={40} className="bg-white" />
                 <span>Rajal Suwal</span>
               </Link>
             </SidebarMenuButton>
