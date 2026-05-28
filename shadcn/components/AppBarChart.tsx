@@ -25,8 +25,8 @@ const chartConfig = {
 
 const AppBarChart = () => {
     return (
-        <div>
-            <h1>Bar</h1>
+        <div className="flex  flex-col justify-center">
+            <h1 className="font-bold text-lg">Bar</h1>
             <ChartContainer config={chartConfig} className="min-h-50 w-full">
                 <BarChart accessibilityLayer data={chartData}>
                     <CartesianGrid vertical={true} />
