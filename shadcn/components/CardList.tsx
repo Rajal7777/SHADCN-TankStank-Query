@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import { Card, CardContent, CardFooter, CardTitle } from "./ui/card";
+import { Card, CardContent,  CardTitle } from "./ui/card";
 
 const popularContent = [
   {
@@ -90,14 +90,15 @@ const latestTransactions = [
 ];
 const CardList = ({ title }: { title: string }) => {
   const list =
-    title === "Popular Content" ? popularContent : latestTransactions;
+    title === "popularcontent" ? popularContent : latestTransactions ;
 
   return (
     <div>
-      <h1 className="text-lg font-medium">{title}</h1>
+      <h1 className="text-lg font-medium capitalize pb-2">{title}</h1 >
+      <hr className="pb-2" />
       <div className="flex flex-col gap-2">
         {list.map((item) => (
-          <Card key={item.id} className="flex-row items-center justify-between">
+          <Card key={item.id} className="flex-row items-center justify-between gap-4 p-4">
             <div className="w-12 h-12 rounded-sm relative overflow-hidden">
               <Image
                 src={item.image}
@@ -107,9 +108,9 @@ const CardList = ({ title }: { title: string }) => {
               />
             </div>
             <CardContent>
-              <CardTitle>{item.title}</CardTitle>
+              <CardTitle className="text-sm font-medium">{item.title}</CardTitle>
             </CardContent>
-            <CardFooter>{item.count / 1000}k</CardFooter>
+            <CardContent>{item.count / 1000}k</CardContent>
           </Card>
         ))}
       </div>
