@@ -1,7 +1,9 @@
 'use client';
 
+import AppLineChart from "@/components/AppLineChart";
 import CardList from "@/components/CardList";
 import EditUser from "@/components/EditUser";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import {
   Breadcrumb,
@@ -11,6 +13,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Button } from "@/components/ui/button";
 
 import {
   HoverCard,
@@ -18,6 +21,7 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { Progress } from "@/components/ui/progress";
+import { Sheet, SheetTrigger } from "@/components/ui/sheet";
 import { BadgeCheck, Candy, Citrus, Shield } from "lucide-react";
 
 const SingleUserPage = () => {
@@ -110,7 +114,12 @@ const SingleUserPage = () => {
           <div className="bg-primary-foreground p-4 rounded-lg">
             <div className="flex justify-between items-center">
               <h2 className="text-xl font-semibold">User Information</h2>
-              <EditUser />
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button>Edit User</Button>
+                </SheetTrigger>
+                <EditUser />
+              </Sheet>
             </div>
             <div className="flex flex-col mt-4">
               <Progress value={75} />
@@ -149,9 +158,21 @@ const SingleUserPage = () => {
         {/* Right */}
         <div className="w-full xl:w-2/3 space-y-6 ">
           {/* User Card container */}
-          <div className="bg-primary-foreground p-4 rounded-lg">User Card</div>
+          <div className="bg-primary-foreground p-4 rounded-lg">
+            <div>
+              <Avatar>
+                <AvatarImage src="https://github.com/shadcn.png" alt="shadcn" />
+                <AvatarFallback>LR</AvatarFallback>
+              </Avatar>
+              <h2 className="text-xl font-semibold">Rajal Suwal</h2>
+            </div>
+            <p className="text-sm text-muted-foreground">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores consequuntur repudiandae possimus tempore quaerat eligendi aspernatur non, iure at quo?</p>
+          </div>
           {/* Chart */}
-          <div className="bg-primary-foreground p-4 rounded-lg">Chart</div>
+
+          <div className="bg-primary-foreground p-4 rounded-lg">
+            <AppLineChart />
+          </div>
         </div>
       </div>
     </div>

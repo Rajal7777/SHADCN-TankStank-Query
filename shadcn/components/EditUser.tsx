@@ -25,7 +25,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "./ui/sheet";
+import {  SheetContent, SheetDescription, SheetHeader, SheetTitle } from "./ui/sheet";
 
 
 
@@ -99,7 +99,7 @@ const EditUser = () => {
   // };
 
   return (
-   <Sheet>
+   
       <SheetContent>
       <SheetHeader>
         <SheetTitle className="mb-4">Edit User</SheetTitle>
@@ -200,7 +200,7 @@ const EditUser = () => {
         </SheetDescription>
       </SheetHeader>
     </SheetContent>
-   </Sheet>
+   
   );
 };
 
