@@ -1,3 +1,5 @@
+'use client';
+
 import CardList from "@/components/CardList";
 import EditUser from "@/components/EditUser";
 import { Badge } from "@/components/ui/badge";

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import  AppSidebar  from "@/components/AppSidebar";
+import AppSidebar from "@/components/AppSidebar";
 import Navbar from "@/components/Navbar";
-import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import ThemeProviderWrapper from "@/components/providers/ThemeProviderWrapper";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { cookies } from "next/headers";
 
@@ -25,15 +25,15 @@ export const metadata: Metadata = {
 };
 
 
- //suppressHydrationWarning ->for prevent hydration mismatch betn user and system
+//suppressHydrationWarning ->for prevent hydration mismatch betn user and system
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
+
   const cookieStore = await cookies();
-  const defaultOpen = cookieStore.get('sidebar_state')?.value === 'true'
+  const defaultOpen = cookieStore.get('sidebar_state')?.value === 'true';
 
   return (
     <html
@@ -43,20 +43,20 @@ export default async function RootLayout({
     >
 
       <body className="min-h-full flex ">
-        <ThemeProvider
+        <ThemeProviderWrapper
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-      <SidebarProvider defaultOpen={defaultOpen}>
-        <AppSidebar />
-          <main className="w-full">
-            <Navbar />
-            <div className="px-8">{children}</div>
-          </main>
-            </SidebarProvider>
-        </ThemeProvider>
+          <SidebarProvider defaultOpen={defaultOpen}>
+            <AppSidebar />
+            <main className="w-full">
+              <Navbar />
+              <div className="px-8">{children}</div>
+            </main>
+          </SidebarProvider>
+        </ThemeProviderWrapper>
       </body>
     </html>
   );
