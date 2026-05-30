@@ -43,7 +43,7 @@ const SingleUserPage = () => {
         </BreadcrumbList>
       </Breadcrumb>
 
-      <div className="mt-4  flex flex-col xl:flex-row  gap-8 border border-white">
+      <div className="mt-4  flex flex-col xl:flex-row  gap-8 ">
         {/* Left */}
         <div className="w-full xl:w-1/3 space-y-6">
           {/* User Badge */}
